@@ -4,8 +4,8 @@ namespace ContosoUniversity.Models
 {
     public class ErrorViewModel
     {
-        public string RequestId { get; set; }
+        public string RequestID { get; set; }
 
-        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+        public bool ShowRequestID => !string.IsNullOrEmpty(RequestID);
     }
 }
