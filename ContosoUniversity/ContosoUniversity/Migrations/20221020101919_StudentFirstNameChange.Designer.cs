@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ContosoUniversity.Migrations
 {
     [DbContext(typeof(SchoolContext))]
-    [Migration("20221020101919_StudentFirstMidNameChange")]
-    partial class StudentFirstMidNameChange
+    [Migration("20221020101919_StudentFirstNameChange")]
+    partial class StudentFirstNameChange
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -72,7 +72,7 @@ namespace ContosoUniversity.Migrations
                     b.Property<DateTime>("EnrollmentDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("FirstMidName")
+                    b.Property<string>("FirstName")
                         .HasColumnName("FirstName")
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);

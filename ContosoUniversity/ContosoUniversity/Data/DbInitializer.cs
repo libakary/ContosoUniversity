@@ -18,14 +18,14 @@
 
 //            var students = new Student[]
 //            {
-//            new Student{FirstMidName="Carson",LastName="Alexander",EnrollmentDate=DateTime.Parse("2005-09-01")},
-//            new Student{FirstMidName="Meredith",LastName="Alonso",EnrollmentDate=DateTime.Parse("2002-09-01")},
-//            new Student{FirstMidName="Arturo",LastName="Anand",EnrollmentDate=DateTime.Parse("2003-09-01")},
-//            new Student{FirstMidName="Gytis",LastName="Barzdukas",EnrollmentDate=DateTime.Parse("2002-09-01")},
-//            new Student{FirstMidName="Yan",LastName="Li",EnrollmentDate=DateTime.Parse("2002-09-01")},
-//            new Student{FirstMidName="Peggy",LastName="Justice",EnrollmentDate=DateTime.Parse("2001-09-01")},
-//            new Student{FirstMidName="Laura",LastName="Norman",EnrollmentDate=DateTime.Parse("2003-09-01")},
-//            new Student{FirstMidName="Nino",LastName="Olivetto",EnrollmentDate=DateTime.Parse("2005-09-01")}
+//            new Student{FirstName="Carson",LastName="Alexander",EnrollmentDate=DateTime.Parse("2005-09-01")},
+//            new Student{FirstName="Meredith",LastName="Alonso",EnrollmentDate=DateTime.Parse("2002-09-01")},
+//            new Student{FirstName="Arturo",LastName="Anand",EnrollmentDate=DateTime.Parse("2003-09-01")},
+//            new Student{FirstName="Gytis",LastName="Barzdukas",EnrollmentDate=DateTime.Parse("2002-09-01")},
+//            new Student{FirstName="Yan",LastName="Li",EnrollmentDate=DateTime.Parse("2002-09-01")},
+//            new Student{FirstName="Peggy",LastName="Justice",EnrollmentDate=DateTime.Parse("2001-09-01")},
+//            new Student{FirstName="Laura",LastName="Norman",EnrollmentDate=DateTime.Parse("2003-09-01")},
+//            new Student{FirstName="Nino",LastName="Olivetto",EnrollmentDate=DateTime.Parse("2005-09-01")}
 //            };
 //            foreach (Student s in students)
 //            {
@@ -121,16 +121,16 @@ namespace ContosoUniversity.Data
 
             var instructors = new Instructor[]
             {
-                new Instructor { FirstMidName = "Kim",     LastName = "Abercrombie",
-                    StartDate = DateTime.Parse("1995-03-11") },
-                new Instructor { FirstMidName = "Fadi",    LastName = "Fakhouri",
-                    StartDate = DateTime.Parse("2002-07-06") },
-                new Instructor { FirstMidName = "Roger",   LastName = "Harui",
-                    StartDate = DateTime.Parse("1998-07-01") },
-                new Instructor { FirstMidName = "Candace", LastName = "Kapoor",
-                    StartDate = DateTime.Parse("2001-01-15") },
-                new Instructor { FirstMidName = "Roger",   LastName = "Zheng",
-                    StartDate = DateTime.Parse("2004-02-12") }
+                new Instructor { FirstName = "Kim",     LastName = "Abercrombie",
+                    HireDate = DateTime.Parse("1995-03-11") },
+                new Instructor { FirstName = "Fadi",    LastName = "Fakhouri",
+                    HireDate = DateTime.Parse("2002-07-06") },
+                new Instructor { FirstName = "Roger",   LastName = "Harui",
+                    HireDate = DateTime.Parse("1998-07-01") },
+                new Instructor { FirstName = "Candace", LastName = "Kapoor",
+                    HireDate = DateTime.Parse("2001-01-15") },
+                new Instructor { FirstName = "Roger",   LastName = "Zheng",
+                    HireDate = DateTime.Parse("2004-02-12") }
             };
 
             foreach (Instructor i in instructors)

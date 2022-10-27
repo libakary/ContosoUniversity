@@ -1,0 +1,77 @@
+﻿@model IEnumerable<ContosoUniversity.Models.InstructorsIndexData>
+
+@{
+	ViewData["Title"] = "Instructors";
+}
+
+<h2>Courses</h2>
+
+<p>
+	<a asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				Last Name
+			</th>
+			<th>
+				First Name
+			</th>
+			<th>
+				Hire Date
+			</th>
+			<th>
+				Office
+			</th>
+			<th>
+				Courses
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model.Instructors)
+		{
+			string selectedRow = "";
+			if (item.Id)
+			{
+				selectedRow = "table-success";
+			}
+
+			<tr class="@selectedRow"></tr>
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.LastName)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.FirstName)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.HireDate)
+				</td>
+				<td>
+					@if (item.OfficeAssignment != null)
+					{
+						@item.OfficeAssignment.Location
+					}
+				</td>
+				<td>
+					@{
+						foreach (var course in item.CourseAssignments)
+						{
+							@course.Course.CourseId @: @course.Course.Title <br />
+						}
+					}
+				</td>
+				<td>
+					<a asp-action="Index" asp-route-id="@item.Id">Index</a> |
+					<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+					<a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+					<a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+				</td>
+			</tr>
+
+		}
+	</tbody>
+</table>

@@ -20,6 +20,7 @@ namespace ContosoUniversity.Models
 
         public Department Department { get; set; }
 
+        //need on mitmuses sest neid võib olla mitu, kollektsioon/list
         public ICollection<Enrollment> Enrollments { get; set; }
         public ICollection<CourseAssignment> CourseAssignments { get; set; }
     }

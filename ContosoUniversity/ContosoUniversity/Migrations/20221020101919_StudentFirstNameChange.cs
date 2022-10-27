@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ContosoUniversity.Migrations
 {
-    public partial class StudentFirstMidNameChange : Migration
+    public partial class StudentFirstNameChange : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -27,7 +27,7 @@ namespace ContosoUniversity.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     LastName = table.Column<string>(maxLength: 50, nullable: true),
-                    FirstMidName = table.Column<string>(maxLength: 50, nullable: true),
+                    FirstName = table.Column<string>(maxLength: 50, nullable: true),
                     EnrollmentDate = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>

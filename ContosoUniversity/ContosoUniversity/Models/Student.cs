@@ -17,7 +17,7 @@ namespace ContosoUniversity.Models
 
         [Required]
         [StringLength(50)]
-        [Column("FirstMidName")]
+        [Column("FirstName")]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
 

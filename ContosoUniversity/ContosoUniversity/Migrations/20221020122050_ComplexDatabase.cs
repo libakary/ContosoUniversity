@@ -10,7 +10,7 @@ namespace ContosoUniversity.Migrations
             migrationBuilder.RenameColumn(
                 name: "FirstName",
                 table: "Student",
-                newName: "FirstMidName");
+                newName: "FirstName");
 
             migrationBuilder.AlterColumn<string>(
                 name: "LastName",
@@ -23,7 +23,7 @@ namespace ContosoUniversity.Migrations
                 oldNullable: true);
 
             migrationBuilder.AlterColumn<string>(
-                name: "FirstMidName",
+                name: "FirstName",
                 table: "Student",
                 maxLength: 50,
                 nullable: false,
@@ -54,7 +54,7 @@ namespace ContosoUniversity.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     LastName = table.Column<string>(maxLength: 50, nullable: false),
-                    FirstMidName = table.Column<string>(maxLength: 50, nullable: false),
+                    FirstName = table.Column<string>(maxLength: 50, nullable: false),
                     StartDate = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
@@ -187,7 +187,7 @@ namespace ContosoUniversity.Migrations
                 table: "Course");
 
             migrationBuilder.RenameColumn(
-                name: "FirstMidName",
+                name: "FirstName",
                 table: "Student",
                 newName: "FirstName");
 

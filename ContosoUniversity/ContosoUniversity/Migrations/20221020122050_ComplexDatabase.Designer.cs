@@ -117,9 +117,9 @@ namespace ContosoUniversity.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("FirstMidName")
+                    b.Property<string>("FirstName")
                         .IsRequired()
-                        .HasColumnName("FirstMidName")
+                        .HasColumnName("FirstName")
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
@@ -160,9 +160,9 @@ namespace ContosoUniversity.Migrations
                     b.Property<DateTime>("EnrollmentDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("FirstMidName")
+                    b.Property<string>("FirstName")
                         .IsRequired()
-                        .HasColumnName("FirstMidName")
+                        .HasColumnName("FirstName")
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 

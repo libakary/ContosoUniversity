@@ -19,23 +19,23 @@ namespace ContosoUniversity.Models
 
         [Required]
         [StringLength(50)]
-        [Column("FirstMidName")]
+        [Column("FirstName")]
         [Display(Name = "First Name")]
-        public string FirstMidName { get; set; }
+        public string FirstName { get; set; }
 
         [Display(Name = "Full Name")]
         public string FullName
         {
             get
             {
-                return LastName + ", " + FirstMidName;
+                return LastName + ", " + FirstName;
             }
         }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        [Display(Name = "Start Date")]
-        public DateTime StartDate { get; set; }
+        [Display(Name = "Hire Date")]
+        public DateTime HireDate { get; set; }
 
         public ICollection<CourseAssignment> CourseAssignments { get; set; }
         public OfficeAssignment OfficeAssignment { get; set; }
