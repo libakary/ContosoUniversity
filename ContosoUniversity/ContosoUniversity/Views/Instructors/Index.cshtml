@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ContosoUniversity.Models.InstructorsIndexData>
+﻿@model ContosoUniversity.Models.InstructorsIndexData
 
 @{
 	ViewData["Title"] = "Instructors";
@@ -34,7 +34,7 @@
 		@foreach (var item in Model.Instructors)
 		{
 			string selectedRow = "";
-			if (item.Id)
+			if (item.Id == (int?)ViewData["Id"])
 			{
 				selectedRow = "table-success";
 			}
@@ -60,7 +60,7 @@
 					@{
 						foreach (var course in item.CourseAssignments)
 						{
-							@course.Course.CourseId @: @course.Course.Title <br />
+							@course.Course.CourseID @: @course.Course.Title <br />
 						}
 					}
 				</td>
