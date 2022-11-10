@@ -167,7 +167,7 @@ namespace ContosoUniversity.Controllers
             var depQuery = from d in _context.Department
                            orderby d.Name
                            select d;
-            ViewBag.Id = new SelectList(depQuery.AsNoTracking(), "Id", "Name", selectedDepartment);
+            ViewBag.Id = new SelectList(depQuery.AsNoTracking(), "DepartmentID", "Name", selectedDepartment);
         }
     }
 }

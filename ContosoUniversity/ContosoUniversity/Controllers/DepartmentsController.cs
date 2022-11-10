@@ -39,7 +39,7 @@ namespace ContosoUniversity.Controllers
 			var department = await _context.Department
 				.Include(i => i.Administrator)
 				.AsNoTracking()
-				.FirstOrDefaultAsync(m => m.Id == id);
+				.FirstOrDefaultAsync(m => m.DepartmentID == id);
 
 			ViewData["InstructorId"] = new SelectList(_context.Instructor, "Id", "FullName",
 				department.InstructorId);
@@ -57,7 +57,7 @@ namespace ContosoUniversity.Controllers
 
 			var departmentToUpdate = await _context.Department
 				.Include(i => i.Administrator)
-				.FirstOrDefaultAsync(m => m.Id == id);
+				.FirstOrDefaultAsync(m => m.DepartmentID == id);
 
 			if (departmentToUpdate == null)
 			{
@@ -143,7 +143,7 @@ namespace ContosoUniversity.Controllers
 			var department = await _context.Department
 				.Include(i => i.Administrator)
 				.AsNoTracking()
-				.FirstOrDefaultAsync(m => m.Id == id);
+				.FirstOrDefaultAsync(m => m.DepartmentID == id);
 
 			if (department == null)
 			{
@@ -172,7 +172,7 @@ namespace ContosoUniversity.Controllers
 		{
 			try
 			{
-				if (await _context.Department.AnyAsync(m => m.Id == dep.Id))
+				if (await _context.Department.AnyAsync(m => m.DepartmentID == dep.DepartmentID))
 				{
 					_context.Department.Remove(dep);
 					await _context.SaveChangesAsync();
@@ -181,7 +181,7 @@ namespace ContosoUniversity.Controllers
 			}
 			catch (DbUpdateConcurrencyException)
 			{
-				return RedirectToAction(nameof(Delete), new { concurrencyError = true, id = dep.Id });
+				return RedirectToAction(nameof(Delete), new { concurrencyError = true, id = dep.DepartmentID });
 			}
 		}
 
