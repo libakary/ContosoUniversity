@@ -192,12 +192,9 @@ namespace ContosoUniversity.Controllers
 				return NotFound();
 			}
 
-			string query = "SELECT * FROM Department WHERE Id = {0}";
 			var dep = await _context.Department
-				.FromSqlRaw(query, id)
 				.Include(d => d.Administrator)
-				.AsNoTracking()
-				.FirstOrDefaultAsync();
+				.FirstOrDefaultAsync(m => m.DepartmentID == id);
 
 			if (dep == null)
 			{
@@ -213,7 +210,10 @@ namespace ContosoUniversity.Controllers
 			return View();
 		}
 
-		public async Task<IActionResult> Create(Department dep)
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Department dep)
 		{
 			if (ModelState.IsValid)
 			{
